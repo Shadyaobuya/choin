@@ -21,10 +21,11 @@
             <div id="myDropdown" class="dropdown-content">
             <button class="delete-notification" data-id="{{ notification.id }}">X</button>
                 <h4>New Notifications</h4>
-                <span class="badge">{% for notification in user.notifications.unread %}</span>
+                <button id="read">Mark all as read</button>
+                <button id="delete">Delete all</button>
+                <span>{% for notification in user.notifications.unread %}</span>
                 <div class="btns">
-                    <button id="read">Mark all as read</button>
-                    <button id="delete">Delete all</button>
+                    
                     <p>You have a new message from <b>{{ notification.actor.username }}
                         <span class="text-muted">{{ notification.timesince }} ago</span></p><br> {{ notification.description |linebreaksbr }}
 
